@@ -8,11 +8,12 @@ import cucumber.api.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.util.concurrent.TimeUnit;
 
-public class FristFeatureSteps {
+public class CRMFeatureSteps {
 
 
     WebDriver driver;
@@ -31,11 +32,11 @@ public class FristFeatureSteps {
         Assert.assertEquals("Login or Register", driver.findElement(By.className("content")).getText());
     }
 
-    @Then("^user enters invalid username and password$")
-    public void userEntersUsernameAndPassword() {
+    @Then("^user enters invalid credentials \"([^\"]*)\" and \"([^\"]*)\"$")
+    public void user_enters_invalid_and(String username, String password) {
         // Write code here that turns the phrase above into concrete actions
-        driver.findElement(By.name("email")).sendKeys("nomanhamayun");
-        driver.findElement(By.name("password")).sendKeys("password");
+        driver.findElement(By.name("email")).sendKeys(username);
+        driver.findElement(By.name("password")).sendKeys(password);
     }
 
     @And("^user clicks on login button$")
@@ -50,5 +51,31 @@ public class FristFeatureSteps {
         driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         Assert.assertEquals("Something went wrong...", driver.findElement(By.xpath("//*[@id=\"ui\"]/div/div/form/div/div[3]/div")).getText());
 
+    }
+
+    @Then("^user click on the signup link$")
+    public void userClickOnTheSignupLink() {
+        // Write code here that turns the phrase above into concrete actions
+        driver.findElement(By.linkText("Sign Up")).click();
+
+    }
+
+    @Then("^user is directed to the Registration page$")
+    public void userIsDirectedToTheSignupPage() {
+        // Write code here that turns the phrase above into concrete actions
+        Assert.assertEquals("https://api.cogmento.com/register/",driver.getCurrentUrl());
+
+    }
+
+    @Then("^user clicks on Classic CRM link$")
+    public void userClicksOnClassicCRMLink() {
+        // Write code here that turns the phrase above into concrete actions
+        driver.findElement(By.linkText("Classic CRM")).click();
+    }
+
+    @And("^user is directed to the Classic CRM page$")
+    public void userIsDirectedToTheClassicCRMPage() {
+        // Write code here that turns the phrase above into concrete actions
+        Assert.assertEquals("https://classic.crmpro.com/login.cfm",driver.getCurrentUrl());
     }
 }
