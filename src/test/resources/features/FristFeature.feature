@@ -1,10 +1,13 @@
-Feature: Demo feature for framework presentation
+Feature: Free CRM Login feature
+
   As an automation engineer
   I want to write cucumber tests
   so I can complete a demo framework
 
-  Scenario: Write first cucumber test
+  Scenario: Free CRM login Test Scenario
 
-    Given I intend to write a test
-    When I write step definition file
-    Then assertion will check the result
+    Given User is already on Login Page
+    When title of page login page is Free CRM
+    Then user enters invalid username and password
+    And user clicks on login button
+    And user views error message
