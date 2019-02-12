@@ -66,16 +66,4 @@ public class CRMFeatureSteps {
         Assert.assertEquals("https://api.cogmento.com/register/",driver.getCurrentUrl());
 
     }
-
-    @Then("^user clicks on Classic CRM link$")
-    public void userClicksOnClassicCRMLink() {
-        // Write code here that turns the phrase above into concrete actions
-        driver.findElement(By.linkText("Classic CRM")).click();
-    }
-
-    @And("^user is directed to the Classic CRM page$")
-    public void userIsDirectedToTheClassicCRMPage() {
-        // Write code here that turns the phrase above into concrete actions
-        Assert.assertEquals("https://classic.crmpro.com/login.cfm",driver.getCurrentUrl());
-    }
 }

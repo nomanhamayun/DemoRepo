@@ -4,6 +4,7 @@ Feature: Free CRM Login feature
   I want to write cucumber tests
   so I can complete a demo framework
 
+@SmokeTest @RegressionTest
   Scenario Outline: Free CRM login Test Scenario
 
     Given User is already on Login Page
@@ -18,6 +19,7 @@ Feature: Free CRM Login feature
    | noman          | software123 |
    | Tom            | Test435    |
 
+@SmokeTest
   Scenario Outline: Follow Sign up link
 
     Given User is already on Login Page
