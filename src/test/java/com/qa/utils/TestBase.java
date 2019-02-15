@@ -14,7 +14,7 @@ public class TestBase {
     public static WebDriver driver;
     public static Properties prop;
 
-    public void TestBase(){
+    public TestBase(){
             try {
              prop = new Properties();
                 FileInputStream fis= new FileInputStream("/Users/nomanhamayun/IdeaProjects/DemoGITRepo/src/test/java/com/qa/config/config.properties");
@@ -33,11 +33,13 @@ public class TestBase {
             System.setProperty("webdriver.gecko.driver","/Users/nomanhamayun/IdeaProjects/DemoGITRepo/src/test/resources/chromedriver");
             driver=new FirefoxDriver();
         }
-
         driver.manage().window().maximize();
         driver.manage().deleteAllCookies();
         driver.manage().timeouts().pageLoadTimeout(TestUtil.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
         driver.manage().timeouts().implicitlyWait(TestUtil.IMPLICIT_WAIT, TimeUnit.SECONDS);
+    }
+    public static void openURL(){
         driver.get(prop.getProperty("url"));
     }
+
 }

@@ -7,22 +7,13 @@ import org.openqa.selenium.support.PageFactory;
 
 public class Homepage extends TestBase {
 
-    @FindBy(name = "nf-field-8")
-    WebElement fullName;
-
-    @FindBy(name = "email")
-    WebElement emailAddress;
-
-    @FindBy(name = "nf-field-11")
-    WebElement companyName;
-
-    @FindBy(name = "nf-field-14")
-    WebElement companyPosition;
-
-    @FindBy(name = "nf-field-12")
-    WebElement message;
-
     public void Homepage() {
         PageFactory.initElements(driver, this);
+    }
+
+    public String getPageTitle(){
+        System.out.println ("Testing Jenkins integration with git");
+        return driver.getTitle();
+
     }
 }

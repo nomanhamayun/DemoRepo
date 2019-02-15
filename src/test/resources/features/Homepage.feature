@@ -8,7 +8,8 @@ Feature: Bink's website availability
   Scenario: Bink's website Homepage Test Scenario
 
     Given user opens browser
-    When accesses Bink's homepage url
+    When user accesses Bink's website
     Then user lands on the homepage
+
 
 
