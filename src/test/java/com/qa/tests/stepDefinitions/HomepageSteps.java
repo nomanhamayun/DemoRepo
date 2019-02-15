@@ -27,7 +27,7 @@ public class HomepageSteps extends TestBase {
 
     @Then("^user lands on the homepage$")
     public void userLandsOnTheHomepage() {
-        Assert.assertEquals("Retail Partners - Bink", hp.getPageTitle());
+        Assert.assertEquals("Retail Partners Bink", hp.getPageTitle());
 
     }
 
